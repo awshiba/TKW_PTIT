@@ -1,0 +1,13 @@
+# css
+/css/login.css
+/css/product.css
+
+# src
+/src/login.html
+/src/product.html
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log

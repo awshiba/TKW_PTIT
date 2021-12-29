@@ -1,0 +1,76 @@
+:root {
+  --black-color: #000;
+  --white-color: #fff;
+  --color-primary-text: #313131;
+  --color-credit-text: #363636;
+  --color-text-disable: #a0a0a0;
+  --color-text-hover: #858585;
+  --color-bg-grey: #f6f6f6;
+  --color-shadow-navbar: rgba(0, 0, 0, 0.15);
+  --color-bg-overlay: rgba(0, 0, 0, 0.6);
+  --color-bg-dropdown: #101010;
+  --font-heading: 'Trade Gothic Next', sans-serif
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: var(--color-primary-text);
+}
+
+html {
+  font-size: 6.25%;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Trade Gothic Next';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://fonts.shopifycdn.com/trade_gothic_next/tradegothicnext_n4.cce37c541867799269982861a2740b3ff2982f2b.woff2?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=a6c283412d18b584fe3d79681124b72d4db405e403c8441238c672d684689c07')
+      format('woff2'),
+    url('https://fonts.shopifycdn.com/trade_gothic_next/tradegothicnext_n4.59ae2328b892fdb38ceed106a2864f2e1b3ffaea.woff?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=f3a59d49d171830c1bed68bdbc0572494473a0672bb2dcfd8cd4ee904038b65e')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://fonts.shopifycdn.com/ibm_plex_sans/ibmplexsans_n4.a6398ab0461dba440ad5b098a18075662bfc4054.woff2?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=3e27f54c1d0c088ee7cb4cab451aec99ed110e49df28f6eb40e9b14ef1aefa4d')
+      format('woff2'),
+    url('https://fonts.shopifycdn.com/ibm_plex_sans/ibmplexsans_n4.16d0a44c67951d5d880da46f67b8701c0baa9e01.woff?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=ecfcce1f7120cdc01a32c3d149ae94172b8ccdcaecddff996b998b8b9bc801d2')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://fonts.shopifycdn.com/ibm_plex_sans/ibmplexsans_n4.a6398ab0461dba440ad5b098a18075662bfc4054.woff2?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=3e27f54c1d0c088ee7cb4cab451aec99ed110e49df28f6eb40e9b14ef1aefa4d')
+      format('woff2'),
+    url('https://fonts.shopifycdn.com/ibm_plex_sans/ibmplexsans_n4.16d0a44c67951d5d880da46f67b8701c0baa9e01.woff?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=ecfcce1f7120cdc01a32c3d149ae94172b8ccdcaecddff996b998b8b9bc801d2')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 500;
+  font-style: normal;
+  src: url('https://fonts.shopifycdn.com/ibm_plex_sans/ibmplexsans_n5.31316299f5f711364f5259b97776ed8684c0fb8d.woff2?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=dde450c935bac0fc7f5fd1a2c0384ad6f24b9f0e4abec92e675945bc03d848c1')
+      format('woff2'),
+    url('https://fonts.shopifycdn.com/ibm_plex_sans/ibmplexsans_n5.c60d0094c0f223dc731937e9bd95b2482169eac3.woff?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=e3795b7d13a1ed08a39c52920947a30ec4d10347c9e017f19c980729ca35d12e')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
+  font-style: italic;
+  src: url('https://fonts.shopifycdn.com/ibm_plex_sans/ibmplexsans_i4.da36f393f4437b4d24c507519a9a2ee7212bc6b0.woff2?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=f14b2797572731ed9cfb7ee8ed56cd88a7355c63e06ac3f848e790c35a096727')
+      format('woff2'),
+    url('https://fonts.shopifycdn.com/ibm_plex_sans/ibmplexsans_i4.1eb646bba300737f0b0bec628b047aa269ce7b33.woff?h1=Ym91bmRhcnlzdXBwbHkuY29t&hmac=dc45521e58fa3e8be245dc519c5679d11749072731624b9fd5c7f7c320ece730')
+      format('woff');
+}
