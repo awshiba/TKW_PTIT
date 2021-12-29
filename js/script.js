@@ -46,8 +46,8 @@ function sleep(milliseconds) {
 }
 
 function handleOnError() {
-  wrapper.innerHTML = `<app-empty>`;
   routeCss.setAttribute('href', '../css/empty.css');
+  wrapper.innerHTML = `<app-empty>`;
 }
 
 const navigate = (route) => {
@@ -68,7 +68,7 @@ const fetchHtmlData = () => {
     let content = await (await fetch(path)).text();
     htmlContent[key.toUpperCase()] = {
       content,
-      css: '../css/' + key + '.css'
+      css: '../css/' + key + '.css',
     };
 
     script();
@@ -129,9 +129,21 @@ const handleNavBar = () => {
   });
 };
 
+const handleLogic = () => {
+  const productItem = document.querySelector(
+    '#wrapper > section > div:nth-child(3) > div > div:nth-child(1) > div'
+  );
+  if (productItem) {
+    productItem.addEventListener('click', () => {
+      navigate(ROUTER.PRODUCT);
+    });
+  }
+};
+
 const script = () => {
-  let currentRoute = ROUTER.PRODUCT;
+  let currentRoute = ROUTER.HOME;
   handleNavBar();
+  handleLogic();
 
   // switch (currentRoute) {
   //   case ROUTER.EMPTY:

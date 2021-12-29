@@ -17,9 +17,9 @@
   display: flex;
   background: '#fa4616';
   padding: 15px 50px;
-  color: white;
-  font-size: 17rem;
-  font-weight: 500;
+  /* color: white; */
+  font-size: 40rem;
+  font-weight: 300;
   border-radius: 50px;
   cursor: pointer;
 }
