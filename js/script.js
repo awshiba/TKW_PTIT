@@ -52,8 +52,8 @@ function handleOnError() {
 
 const navigate = (route) => {
   if (Object.keys(htmlContent).includes(route)) {
-    wrapper.innerHTML = htmlContent[route].content;
     routeCss.setAttribute('href', htmlContent[route].css);
+    wrapper.innerHTML = htmlContent[route].content;
   } else {
     handleOnError();
   }
@@ -97,7 +97,7 @@ const handleNavBar = () => {
   });
 
   accountBtn.addEventListener('click', () => {
-    navigate(ROUTER.LOGINS);
+    navigate(ROUTER.LOGIN);
   });
 
   // Shop button navbar click
@@ -130,7 +130,7 @@ const handleNavBar = () => {
 };
 
 const script = () => {
-  let currentRoute = ROUTER.HOME;
+  let currentRoute = ROUTER.PRODUCT;
   handleNavBar();
 
   // switch (currentRoute) {

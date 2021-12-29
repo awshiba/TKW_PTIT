@@ -1,0 +1,153 @@
+.content {
+  padding: 40px;
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.main__content {
+  display: flex;
+  flex-direction: row;
+  width: inherit;
+}
+
+div.content__image {
+  flex: 2;
+  /* background: blue; */
+  margin-right: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.content__image > div {
+  flex: 1;
+}
+
+.content__image > div:nth-of-type(1) {
+  margin-right: 20px;
+}
+
+.content__image > div > img {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+}
+
+div.content__detail {
+  flex: 1;
+  padding: 40px 0 0 0;
+}
+
+.content__detail > h1 {
+  font-size: 24rem;
+  font-weight: 400;
+  font-family: var(--font-heading);
+  margin-bottom: 10px;
+}
+
+.content__detail > span {
+  font-size: 14rem;
+  font-weight: 400;
+  color: #313131
+}
+
+span.product__old-price {
+  color: #B1B1B1;
+  text-decoration: line-through;
+  margin-left: 3px;
+}
+
+.content__detail > h2 {
+  margin-top: 50px;
+  font-size: 15rem;
+  font-weight: 400;
+}
+
+.product__type-select {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+}
+
+.product__type-select > div {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #b1b1b1;
+  margin-right: 10px;
+  /* overflow: hidden; */
+  padding: 2px;
+}
+
+.product__type-select > div > img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 100px;
+}
+
+.product__type-select > div:focus {
+  border-color: #333;
+}
+
+div.product__cart-btn {
+  width: 100%;
+  height: 48px;
+  background-color: #fa4616;
+  border-radius: 24px;
+  text-align: center;
+  line-height: 48px;
+  color: white;
+  font-size: 14rem;
+  font-weight: 400;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+div.product__buy-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 24px;
+  text-align: center;
+  line-height: 48px;
+  border: 1px solid #e0e0e0;
+  color: black;
+  font-size: 14rem;
+  font-weight: 400;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+div.product__buy-btn:hover {
+  border-color: #fa4616;
+}
+
+.product__text-detail {
+  font-size: 14rem;
+  margin-top: 40px;
+  color: #313131;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+
+.product__horizontal-infor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px;
+  margin-bottom: 10px;
+}
+
+.product__horizontal-infor:hover {
+  background-color: #eaeaea;
+}
+
+.product__horizontal-infor > h4 {
+  font-size: 14rem;
+  font-weight: 500;
+  color: #313131;
+}
+
+.product__horizontal-infor > div {
+  width: 20px;
+  height: 20px;
+}
