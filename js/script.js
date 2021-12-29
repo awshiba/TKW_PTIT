@@ -7,6 +7,8 @@ const webLogo = document.querySelector('.header__navbar-logo');
 const accountBtn = document.querySelector('.header__right-icon.account');
 const homeBtn = document.querySelector('.header__navbar-item.home');
 
+const routeCss = document.querySelector('link[value="css"]');
+
 const TOP_STATUS_HEIGHT = 44;
 const body = document.body;
 const pathNameRgx = new RegExp('(?<=src/)(.*)(?=.html)');
@@ -35,15 +37,17 @@ function sleep(milliseconds) {
 }
 
 const navigate = (route) => {
-  if (Object.keys(htmlContent).length) wrapper.innerHTML = htmlContent[route];
-  else alert('Có lỗi xảy ra');
+  if (Object.keys(htmlContent).length) {
+    wrapper.innerHTML = htmlContent[route].content;
+    routeCss.setAttribute('href', htmlContent[route].css)
+  } else alert('Có lỗi xảy ra');
 };
 
 const fetchHtmlData = () => {
   listHtmlPath.forEach(async (path) => {
     let key = pathNameRgx.exec(path)[0];
     let content = await (await fetch(path)).text();
-    htmlContent[key.toUpperCase()] = content;
+    htmlContent[key.toUpperCase()] = { content, css: '../css/' + key + '.css' };
     script();
   });
 };
@@ -103,7 +107,7 @@ const handleNavBar = () => {
 };
 
 const script = async () => {
-  let currentRoute = ROUTER.LOGIN;
+  let currentRoute = ROUTER.HOME;
   handleNavBar();
 
   // switch (currentRoute) {
