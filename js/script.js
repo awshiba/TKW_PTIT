@@ -8,6 +8,7 @@ const accountBtn = document.querySelector('.header__right-icon.account');
 const homeBtn = document.querySelector('.header__navbar-item.home');
 
 const routeCss = document.querySelector('link[value="css"]');
+const routeJs = document.querySelector('script');
 
 const TOP_STATUS_HEIGHT = 44;
 const body = document.body;
@@ -17,15 +18,23 @@ const ROUTER = {
   HOME: 'HOME',
   PRODUCT: 'PRODUCT',
   LOGIN: 'LOGIN',
-  EMPTY: 'EMPTY',
 };
 const listHtmlPath = [
   '../src/home.html',
   '../src/login.html',
   '../src/product.html',
-  '../src/empty.html',
 ];
 const htmlContent = {};
+
+function getElementByXpath(path) {
+  return document.evaluate(
+    path,
+    document,
+    null,
+    XPathResult.FIRST_ORDERED_NODE_TYPE,
+    null
+  ).singleNodeValue;
+}
 
 function sleep(milliseconds) {
   var start = new Date().getTime();
@@ -36,18 +45,32 @@ function sleep(milliseconds) {
   }
 }
 
+function handleOnError() {
+  wrapper.innerHTML = `<app-empty>`;
+  routeCss.setAttribute('href', '../css/empty.css');
+}
+
 const navigate = (route) => {
-  if (Object.keys(htmlContent).length) {
+  if (Object.keys(htmlContent).includes(route)) {
     wrapper.innerHTML = htmlContent[route].content;
-    routeCss.setAttribute('href', htmlContent[route].css)
-  } else alert('Có lỗi xảy ra');
+    routeCss.setAttribute('href', htmlContent[route].css);
+  } else {
+    handleOnError();
+  }
 };
 
 const fetchHtmlData = () => {
+  if (!Object.keys(listHtmlPath).length) {
+    throw new Error('fetch data failed');
+  }
   listHtmlPath.forEach(async (path) => {
     let key = pathNameRgx.exec(path)[0];
     let content = await (await fetch(path)).text();
-    htmlContent[key.toUpperCase()] = { content, css: '../css/' + key + '.css' };
+    htmlContent[key.toUpperCase()] = {
+      content,
+      css: '../css/' + key + '.css'
+    };
+
     script();
   });
 };
@@ -74,7 +97,7 @@ const handleNavBar = () => {
   });
 
   accountBtn.addEventListener('click', () => {
-    navigate(ROUTER.LOGIN);
+    navigate(ROUTER.LOGINS);
   });
 
   // Shop button navbar click
@@ -106,16 +129,21 @@ const handleNavBar = () => {
   });
 };
 
-const script = async () => {
+const script = () => {
   let currentRoute = ROUTER.HOME;
   handleNavBar();
 
   // switch (currentRoute) {
+  //   case ROUTER.EMPTY:
+  //     handleOnEmpty()
   //   default:
-  //     return;
   // }
 
   navigate(currentRoute);
 };
 
-fetchHtmlData();
+try {
+  fetchHtmlData();
+} catch (err) {
+  handleOnError();
+}
