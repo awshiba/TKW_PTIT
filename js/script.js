@@ -6,6 +6,7 @@ const dropdownNav = document.querySelector('.navbar__item-dropdown');
 const webLogo = document.querySelector('.header__navbar-logo');
 const accountBtn = document.querySelector('.header__right-icon.account');
 const homeBtn = document.querySelector('.header__navbar-item.home');
+const cartBtn = document.querySelector('.header__right-link.cart');
 
 const routeCss = document.querySelector('link[value="css"]');
 const routeJs = document.querySelector('script');
@@ -18,11 +19,13 @@ const ROUTER = {
   HOME: 'HOME',
   PRODUCT: 'PRODUCT',
   LOGIN: 'LOGIN',
+  CART: 'CART',
 };
 const listHtmlPath = [
   '../src/home.html',
   '../src/login.html',
   '../src/product.html',
+  '../src/cart.html',
 ];
 const htmlContent = {};
 
@@ -94,6 +97,10 @@ const handleNavBar = () => {
 
   homeBtn.addEventListener('click', () => {
     navigate(ROUTER.HOME);
+  });
+
+  cartBtn.addEventListener('click', () => {
+    navigate(ROUTER.CART);
   });
 
   accountBtn.addEventListener('click', () => {
