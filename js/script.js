@@ -20,12 +20,16 @@ const ROUTER = {
   PRODUCT: 'PRODUCT',
   LOGIN: 'LOGIN',
   CART: 'CART',
+  FORGOT: 'FORGOT',
+  CHANGE: 'CHANGE',
 };
 const listHtmlPath = [
   '../src/home.html',
   '../src/login.html',
   '../src/product.html',
   '../src/cart.html',
+  '../src/forgot.html',
+  '../src/change.html',
 ];
 const htmlContent = {};
 

@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 26.5vw;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.text1 {
+  color: black;
+  font-size: 36px;
+  padding-block: 4px;
+  display: block;
+}
+
+.text2 {
+  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+.box1 {
+  padding-top: 35px;
+  width: 100%;
+}
+.box2 {
+  padding-top: 20px;
+  width: 100%;
+}
+.cancel-btn {
+  width: 100%;
+  padding-block: 17px;
+  font-size: 14px;
+  text-decoration: underline;
+  line-height: 48px;
+  text-align: center;
+}
+
+.input {
+  border-radius: 28px;
+  width: 100%;
+  padding-block: 17px;
+  padding-inline: 14px;
+  border: 1px #b0b0b0 solid;
+  color: #000;
+}
+
+.submit-btn {
+  border-radius: 28px;
+  border: 1px #fa4616 solid;
+  width: 100%;
+  padding-block: 17px;
+  padding-inline: 14px;
+  background-color: #fa4616;
+  color: #fff;
+}
+.submit-btn:hover {
+  background-color: #ff3700;
+}
