@@ -22,6 +22,7 @@ const ROUTER = {
   CART: 'CART',
   FORGOT: 'FORGOT',
   CHANGE: 'CHANGE',
+  SIGNUP: 'SIGNUP',
 };
 const listHtmlPath = [
   '../src/home.html',
@@ -30,6 +31,7 @@ const listHtmlPath = [
   '../src/cart.html',
   '../src/forgot.html',
   '../src/change.html',
+  '../src/signup.html',
 ];
 const htmlContent = {};
 
@@ -55,6 +57,7 @@ function sleep(milliseconds) {
 function handleOnError() {
   routeCss.setAttribute('href', '../css/empty.css');
   wrapper.innerHTML = `<app-empty>`;
+  window.scrollTo(0, 0)
 }
 
 const navigate = (route) => {
@@ -155,12 +158,6 @@ const script = () => {
   let currentRoute = ROUTER.HOME;
   handleNavBar();
   handleLogic();
-
-  // switch (currentRoute) {
-  //   case ROUTER.EMPTY:
-  //     handleOnEmpty()
-  //   default:
-  // }
 
   navigate(currentRoute);
 };
